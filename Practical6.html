@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Practical 6</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .div-div {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        width: 25%;
+        border-radius: 8px;
+        padding: 1rem;
+        box-shadow: 4px 5px 4px rgba(128, 128, 128, 0.247);
+      }
+      .div-img {
+        display: flex;
+        width: 100%;
+        height: 50%;
+        border-radius: 8px;
+      }
+      .h4Type1 {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+      .h4Type2 {
+        font-weight: normal;
+        margin-bottom: 1rem;
+        text-align: justify;
+      }
+      div a {
+        display: block;
+        background-color: red;
+        color: white;
+        width: 100%;
+        text-decoration: none;
+        border-radius: 8px;
+        text-align: center;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+      }
+      div a:hover {
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body
+    style="
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      background-color: lightgray;
+    "
+  >
+    <a
+      href="./index.html"
+      style="
+        font-size: large;
+        float: right;
+        margin-right: 4px;
+        font-family: 'Times New Roman', Times, serif;
+      "
+      >Back to Home</a
+    >
+    <h1
+      style="
+        color: white;
+        text-align: center;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+      "
+    >
+      PRACTICAL-6: CREATE A CARD LAYOUT USING CSS LAYOUT PROPERTIES
+    </h1>
+    <div style="display: flex">
+      <div class="div-div" style="margin-left: 3%; margin-right: 1.5%">
+        <img class="div-img" src="./images/HTML.png" />
+        <h4 class="h4Type1">Introduction to HTML</h4>
+        <h4 class="h4Type2">
+          The HyperText Markup Language, or HTML is the standard markup language
+          for documents designed to be displayed in a web browser. It can be
+          assisted by technologies such as Cascading Style Sheets (CSS) and
+          scripting languages such as JavaScript.
+        </h4>
+        <a href="./ReadMoreHTML.html">Read more</a>
+      </div>
+      <div class="div-div" style="margin-left: 1.5%; margin-right: 1.5%">
+        <img class="div-img" src="./images/CSS.png" />
+        <h4 class="h4Type1">Introduction to CSS</h4>
+        <h4 class="h4Type2">
+          Cascading Style Sheets (CSS) is a style sheet language used for
+          describing the presentation of a document written in a markup language
+          such as HTML. It contains CSS design templates for typography, forms,
+          buttons, navigation, and other interface components.
+        </h4>
+        <a href="./ReadMoreCSS.html">Read more</a>
+      </div>
+      <div class="div-div" style="margin-left: 1.5%; margin-right: 1.5%">
+        <img class="div-img" src="./images/JS.png" />
+        <h4 class="h4Type1">Introduction to JavaScript</h4>
+        <h4 class="h4Type2">
+          JavaScriptoften is a programming language that conforms to the
+          ECMAScript specification.[10] JavaScript is high-level, often
+          just-in-time compiled, and multi-paradigm. It has curly-bracket
+          syntax, dynamic typing, prototype-based object-orientation, and
+          first-class functions.
+        </h4>
+        <a href="./ReadMoreJS.html">Read more</a>
+      </div>
+      <div class="div-div" style="margin-left: 1.5%; margin-right: 3%">
+        <img class="div-img" src="./images/BOOTSTRAP.png" />
+        <h4 class="h4Type1">Introduction to Bootstrap</h4>
+        <h4 class="h4Type2">
+          Bootstrap is a free and open-source CSS framework directed at
+          responsive, mobile-first front-end web development. It contains CSS-
+          and (optionally) JavaScript-based design templates for typography,
+          forms, buttons, navigation, and other interface components.
+        </h4>
+        <a href="./ReadMoreBOOTSTRAP.html">Read more</a>
+      </div>
+    </div>
+  </body>
+</html>
