@@ -7,24 +7,41 @@
         margin: 0;
         padding: 0;
       }
-      li {
-        font-size: large;
-        margin-top: 4px;
-        margin-bottom: 4px;
+      .grid-a {
+        font-family:cursive;
+        color: black;
+        text-decoration: none;
+        padding: 1rem;
+        margin: 1rem;
+        border-style: solid;
+        border-width: 1px;
+        border-color: rgb(231, 226, 226);
+        box-shadow: 4px 5px 4px rgba(0, 4, 250, 0.151);
       }
-
-      dt {
-        font-size: large;
-        margin-top: 16px;
+      .grid-a:hover {
+        background-color:lightgray;
+        transition: 0.5s;
+      }
+      .grid-a:active {
+        background-color:lightgray;
+        transform: scale(0.95);
+        transition: 0.5s;
+      }
+      .grid-a-h1 {
+        text-align: center;
+      }
+      .grid-a-h4 {
+        font-weight: normal;
+        margin-top: 1rem;
+        text-align: justify;
       }
     </style>
   </head>
-  <body>
+  <body style="font-family: Arial, Helvetica, sans-serif;">
     <h1
       style="
         background-color: rgb(13, 13, 46);
         color: white;
-        font-family: Arial, Helvetica, sans-serif;
         padding: 16px;
       "
     >
@@ -32,34 +49,45 @@
     </h1>
     <div style="margin: 1%">
       <h3>Here are the links to all the practicals:</h3>
-      <ul>
-        <dt>
-          <a href="./Practical1.html">Practical 1</a>
-        </dt>
-        <dd>About Fullstack Development Course</dd>
-        <dt><a href="./Practical2.html">Practical 2</a></dt>
-        <dd>
-          Create a web page showing output as Html Structure using character
-          Entities and span Tag.
-        </dd>
-        <dt><a href="./Practical3.html">Practical 3</a></dt>
-        <dd>Live your First Web-Page on Git-Hub</dd>
-        <dt><a href="./index.html">Practical 4</a></dt>
-        <dd>
-          Create a website having list of all practical and their individual
-          practical Page links .
-        </dd>
-        <dt>
-          <a href="./Practical5.html">Practical 5</a>
-        </dt>
-        <dd>
-          Create a Web-Page showing the use of Image-Map in the Web Application.
-        </dd>
-        <dt>
-          <a href="./Practical6.html">Practical 6</a>
-        </dt>
-        <dd>Create a Card Layout using CSS layout properties.</dd>
-      </ul>
+
+      <div
+        style="
+          margin: 2rem;
+          display: grid;
+          grid-template-columns: 25% 25% 25% 25%;
+        "
+      >
+        <a href="./Practical1.html" class="grid-a">
+          <h1 class="grid-a-h1">1</h3>
+          <h4 class="grid-a-h4">About Fullstack Development Course</h5>
+        </a>
+        <a href="./Practical2.html" class="grid-a">
+          <h1 class="grid-a-h1">2</h3>
+          <h4 class="grid-a-h4">Create a web page showing output as Html Structure using character
+            Entities and span Tag.</h5>
+        </a>
+        <a href="./Practical3.html" class="grid-a">
+          <h1 class="grid-a-h1">3</h3>
+          <h4 class="grid-a-h4">Live your First Web-Page on Git-Hub</h5>
+        </a>
+        <a href="./Practical4.html" class="grid-a">
+          <h1 class="grid-a-h1">4</h3>
+          <h4 class="grid-a-h4">Create a website having list of all practical and their individual
+            practical Page links .</h5>
+        </a>
+        <a href="./Practical5.html" class="grid-a">
+          <h1 class="grid-a-h1">5</h3>
+          <h4 class="grid-a-h4">Create a Web-Page showing the use of Image-Map in the Web Application.</h5>
+        </a>
+        <a href="./Practical6.html" class="grid-a">
+          <h1 class="grid-a-h1">6</h3>
+          <h4 class="grid-a-h4">Create a Card Layout using CSS layout properties.</h5>
+        </a>
+        <a href="./Practical7.html" class="grid-a">
+          <h1 class="grid-a-h1">7</h3>
+          <h4 class="grid-a-h4">Create a Web Page Layout using div tags.</h5>
+        </a>
+      </div>
     </div>
   </body>
 </html>
