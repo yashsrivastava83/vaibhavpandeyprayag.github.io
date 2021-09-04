@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Practical 7</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      .nav-a {
+        margin: auto;
+        text-decoration: none;
+        font-variant: small-caps;
+        color: white;
+        border: 0;
+        border-radius: 0.3rem;
+        font-size: x-large;
+        padding: 0.5rem;
+      }
+      .nav-a:hover {
+        transition: 0.5s;
+        color: black;
+        background-color: white;
+      }
+      .nav-a:active {
+        transition: 0s;
+        transform: scale(0.95);
+      }
+      .teamMember {
+        width: 25%;
+        height: 20rem;
+        background-color: rgb(233, 152, 2);
+        border-radius: 50%;
+        margin: 2rem;
+        box-shadow: 4px 5px 4px rgba(128, 128, 128, 0.247);
+      }
+      .articleBox {
+        display: flex;
+        justify-content: center;
+        color: black;
+        position: relative;
+        height: 8rem;
+      }
+      .articleBox::before {
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url(./images/Practical8_Article.png);
+        background-size: cover;
+        opacity: 40%;
+      }
+      .articleBox-content {
+        position: relative;
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+      .technology {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        width: 25%;
+        border-radius: 8px;
+        padding: 1rem;
+        box-shadow: 4px 5px 4px rgba(128, 128, 128, 0.247);
+      }
+      .technology-img {
+        display: flex;
+        width: 100%;
+        height: 50%;
+        border-radius: 8px;
+      }
+      .technology-h4Type1 {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+      .technology-h4Type2 {
+        font-weight: normal;
+        margin-bottom: 1rem;
+        text-align: justify;
+      }
+      .technology-a {
+        display: block;
+        background-color: red;
+        color: white;
+        width: 100%;
+        text-decoration: none;
+        border-radius: 8px;
+        text-align: center;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+      }
+      .technology-a:hover {
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body
+    style="
+      position: relative;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    "
+  >
+    <nav
+      style="
+        display: flex;
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        justify-content: space-evenly;
+        padding: 0.5rem;
+        height: 3rem;
+        color: white;
+        text-align: center;
+        background-color: rgb(1, 1, 61);
+        z-index: 1;
+      "
+    >
+      <a href="#home" class="nav-a">Home</a>
+      <a href="#team" class="nav-a">Team</a>
+      <a href="#about" class="nav-a">About</a>
+      <a href="#technologies" class="nav-a">Technologies</a>
+      <a href="#contact" class="nav-a">Contact</a>
+    </nav>
+    <div style="position: absolute; top: 4rem; z-index: -1">
+      <label
+        id="home"
+        style="position: absolute; top: -4rem; visibility: hidden"
+      >
+        Home Scroll Management
+      </label>
+      <div
+        style="
+          position: relative;
+          color: white;
+          padding-left: 1rem;
+          background-image: url(./images/Practical8_Banner.jfif);
+          background-size: cover;
+          height: 44rem;
+        "
+      >
+        <h1 style="position: absolute; margin-top: 4rem">Practical 8</h1>
+      </div>
+      <div style="position: relative; text-align: center; margin-top: 1rem">
+        <label
+          id="team"
+          style="position: absolute; top: -5rem; visibility: hidden"
+        >
+          Team Scroll Management
+        </label>
+        <h1>Team Members</h1>
+        <div style="display: flex; justify-content: center">
+          <div
+            class="teamMember"
+            style="
+              background-size: cover;
+              background-image: url(./images/Practical8_TeamMemberA.png);
+            "
+          ></div>
+          <div
+            class="teamMember"
+            style="
+              background-size: cover;
+              background-image: url(./images/Practical8_TeamMemberB.png);
+            "
+          ></div>
+          <div
+            class="teamMember"
+            style="
+              background-size: cover;
+              background-image: url(./images/Practical8_TeamMemberA.png);
+            "
+          ></div>
+          <div
+            class="teamMember"
+            style="
+              background-size: cover;
+              background-image: url(./images/Practical8_TeamMemberB.png);
+            "
+          ></div>
+        </div>
+      </div>
+      <div style="position: relative; text-align: center; margin-top: 1rem">
+        <label
+          id="about"
+          style="position: absolute; top: -5rem; visibility: hidden"
+        >
+          About Scroll Management
+        </label>
+        <h1>About Us</h1>
+        <div style="display: flex; margin-top: 1rem; gap: 6px">
+          <div
+            style="
+              text-align: left;
+              background-color: rgba(163, 163, 235, 0.295);
+              width: 50%;
+              padding: 0.5rem;
+            "
+          >
+            <h3 style="margin-bottom: 1rem">About Us</h3>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores
+              beatae facilis nulla cum adipisci minima sint rem nesciunt,
+              blanditiis eius, vitae laboriosam necessitatibus. Beatae, illo quo
+              fugit neque rem molestias?
+            </p>
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 6px;
+              color: white;
+              width: 50%;
+            "
+          >
+            <div class="articleBox">
+              <h3 class="articleBox-content">Project-1</h3>
+            </div>
+            <div class="articleBox">
+              <h3 class="articleBox-content">Project-2</h3>
+            </div>
+            <div class="articleBox">
+              <h3 class="articleBox-content">Project-3</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="position: relative; text-align: center; margin-top: 1rem">
+        <label id="technologies" style="position: absolute; visibility: hidden">
+          Technologies Scroll Management
+        </label>
+        <h1>Technologies Used</h1>
+        <div style="display: flex; justify-content: center; margin-top: 1rem">
+          <div class="technology" style="margin-left: 3%; margin-right: 1.5%">
+            <img class="technology-img" src="./images/HTML.png" />
+            <h4 class="technology-h4Type1">Introduction to HTML</h4>
+            <h4 class="technology-h4Type2">
+              The HyperText Markup Language, or HTML is the standard markup
+              language for documents designed to be displayed in a web browser.
+              It can be assisted by technologies such as Cascading Style Sheets
+              (CSS) and scripting languages such as JavaScript.
+            </h4>
+            <a class="technology-a" href="./ReadMoreHTML.html">Read more</a>
+          </div>
+          <div class="technology" style="margin-left: 1.5%; margin-right: 1.5%">
+            <img class="technology-img" src="./images/CSS.png" />
+            <h4 class="technology-h4Type1">Introduction to CSS</h4>
+            <h4 class="technology-h4Type2">
+              Cascading Style Sheets (CSS) is a style sheet language used for
+              describing the presentation of a document written in a markup
+              language such as HTML. It contains CSS design templates for
+              typography, forms, buttons, navigation.
+            </h4>
+            <a class="technology-a" href="./ReadMoreCSS.html">Read more</a>
+          </div>
+          <div class="technology" style="margin-left: 1.5%; margin-right: 1.5%">
+            <img class="technology-img" src="./images/JS.png" />
+            <h4 class="technology-h4Type1">Introduction to JavaScript</h4>
+            <h4 class="technology-h4Type2">
+              JavaScriptoften is a programming language that conforms to the
+              ECMAScript specification.[10] JavaScript is high-level, often
+              just-in-time compiled, and multi-paradigm. It has curly-bracket
+              syntax, dynamic typing, prototype-based object-orientation, and
+              first-class functions.
+            </h4>
+            <a class="technology-a" href="./ReadMoreJS.html">Read more</a>
+          </div>
+          <div class="technology" style="margin-left: 1.5%; margin-right: 3%">
+            <img class="technology-img" src="./images/BOOTSTRAP.png" />
+            <h4 class="technology-h4Type1">Introduction to Bootstrap</h4>
+            <h4 class="technology-h4Type2">
+              Bootstrap is a free and open-source CSS framework directed at
+              responsive, mobile-first front-end web development. It contains
+              CSS- and (optionally) JavaScript-based design templates for
+              typography, forms, buttons, navigation, and other interface
+              components.
+            </h4>
+            <a class="technology-a" href="./ReadMoreBOOTSTRAP.html"
+              >Read more</a
+            >
+          </div>
+        </div>
+      </div>
+      <div style="position: relative; text-align: center; margin-top: 2rem">
+        <label id="contact" style="position: absolute; visibility: hidden">
+          Technologies Scroll Management
+        </label>
+
+        <div
+          style="
+            display: flex;
+            left: 0;
+            top: 0;
+            right: 0;
+            justify-content: space-between;
+            padding: 0.5rem;
+            height: 3rem;
+            color: white;
+            text-align: center;
+            background-color: rgb(1, 1, 61);
+          "
+        >
+          <h2 style="margin-top: auto; margin-bottom: auto">Contact Us</h2>
+          <h3 style="margin-top: auto; margin-bottom: auto">
+            Email: <i>vaibhavpandeyprayag@gmail.com</i>
+          </h3>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
