@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Practical 10</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .nav {
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        padding: 0.5rem;
+        height: 3rem;
+        color: white;
+        background-color: rgb(1, 1, 61);
+        z-index: 1;
+      }
+      .sidebar-show-button {
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        color: white;
+        z-index: 2;
+        width: 2rem;
+        height: 2rem;
+        margin-top: auto;
+        margin-bottom: auto;
+        border-radius: 0.2rem;
+      }
+      .sidebar-show-button:hover {
+        transition: 0.2s;
+        box-shadow: 1px 1px 8px 3px lightgray;
+      }
+      .sidebar-show-button:active {
+        transition: 0.1s;
+        transform: scale(0.8);
+      }
+      .sidebar-close-button {
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        color: white;
+        z-index: 2;
+        display: none;
+        width: 2rem;
+        height: 2rem;
+        margin-top: auto;
+        margin-bottom: auto;
+        border-radius: 0.2rem;
+      }
+      .sidebar-close-button:hover {
+        transition: 0.2s;
+        box-shadow: 1px 1px 8px 3px lightgray;
+      }
+      .sidebar-close-button:active {
+        transition: 0.1s;
+        transform: scale(0.8);
+      }
+      .sidebar {
+        position: fixed;
+        top: 4rem;
+        left: -100%;
+        width: 30%;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(1, 1, 61);
+        transition: 0.5s;
+      }
+      .sidebar-a {
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+        gap: 8px;
+        color: white;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        transition: 0.2s;
+      }
+      @media (max-width: 768px) {
+        .sidebar {
+          width: 100%;
+        }
+        .hero-section {
+          gap: 1rem;
+          flex-direction: column;
+          width: 100%;
+        }
+        .hero-section-1 {
+          width: 100%;
+        }
+      }
+      @media (min-width: 769px) {
+        .hero-section-1 {
+          width: 50%;
+        }
+        .hero-section-2 {
+          width: 50%;
+        }
+      }
+      .sidebar-a:hover {
+        border-left: 1rem solid white;
+        background-color: navy;
+        height: max-content;
+      }
+      #sidebar-toggle:checked ~ .sidebar-show-button {
+        display: none;
+      }
+      #sidebar-toggle:checked ~ .sidebar {
+        left: 0;
+      }
+      #sidebar-toggle:checked ~ .sidebar-close-button {
+        display: block;
+      }
+      #sidebar-toggle:checked ~ .content {
+        margin-left: 30%;
+      }
+    </style>
+  </head>
+  <body
+    style="
+      position: relative;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    "
+  >
+    <nav class="nav">
+      <div style="display: flex; gap: 8px; align-items: center">
+        <span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="2rem"
+            height="2rem"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </span>
+        <h1 style="line-height: 3rem">FullStack Development</h1>
+      </div>
+    </nav>
+    <input type="checkbox" id="sidebar-toggle" style="display: none" />
+    <label for="sidebar-toggle" class="sidebar-show-button">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="2rem"
+        height="2rem"
+        fill="currentColor"
+        class="bi bi-list"
+        viewBox="0 0 16 16"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+        />
+      </svg>
+    </label>
+    <label for="sidebar-toggle" class="sidebar-close-button">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="2rem"
+        height="2rem"
+        fill="currentColor"
+        class="bi bi-x"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+        />
+      </svg>
+    </label>
+    <div class="sidebar">
+      <a href="" class="sidebar-a">
+        <span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1rem"
+            height="1rem"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"
+            />
+          </svg>
+        </span>
+        Home
+      </a>
+      <a href="" class="sidebar-a">
+        <span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1rem"
+            height="1rem"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </span>
+        About
+      </a>
+      <a href="" class="sidebar-a">
+        <svg
+          width="1rem"
+          height="1rem"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"
+            clip-rule="evenodd"
+          />
+        </svg>
+        Services
+      </a>
+      <a href="" class="sidebar-a">
+        <span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1rem"
+            height="1rem"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z"
+              clip-rule="evenodd"
+            />
+            <path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z" />
+          </svg>
+        </span>
+        Blog
+      </a>
+      <a href="" class="sidebar-a">
+        <span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1rem"
+            height="1rem"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-2 0c0 .993-.241 1.929-.668 2.754l-1.524-1.525a3.997 3.997 0 00.078-2.183l1.562-1.562C15.802 8.249 16 9.1 16 10zm-5.165 3.913l1.58 1.58A5.98 5.98 0 0110 16a5.976 5.976 0 01-2.516-.552l1.562-1.562a4.006 4.006 0 001.789.027zm-4.677-2.796a4.002 4.002 0 01-.041-2.08l-.08.08-1.53-1.533A5.98 5.98 0 004 10c0 .954.223 1.856.619 2.657l1.54-1.54zm1.088-6.45A5.974 5.974 0 0110 4c.954 0 1.856.223 2.657.619l-1.54 1.54a4.002 4.002 0 00-2.346.033L7.246 4.668zM12 10a2 2 0 11-4 0 2 2 0 014 0z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </span>
+        Contact
+      </a>
+    </div>
+    <div
+      class="content"
+      style="margin-top: 4rem; padding: 1rem; transition: 0.5s; z-index: 0"
+    >
+      <div class="hero-section" style="display: flex; align-items: center">
+        <img class="hero-section-1" src="./images/Practical8_Banner.jfif" />
+        <div
+          class="hero-section-2"
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-left: 1rem;
+          "
+        >
+          <img src="./images/Practical10_Icon.jpg" style="width: 50%" />
+          <h2 style="margin: auto; margin-top: 2rem">
+            What is FullStack Development?
+          </h2>
+        </div>
+      </div>
+      <div style="margin-top: 1rem">
+        <p style="margin-top: 1rem">
+          <b><i>Full stack development</i></b> is the practice of working on
+          both the front-end and back-end of a program. It is a term mostly used
+          for those working in web development. The developers have background
+          on creating user interface and user experience for front-end, and also
+          have strong knowledge in a programming language that is used for
+          handling the logic of the application, hence back-end.
+          <b><i>Full Stack</i></b> is a layer of software or web development
+          consisting of the front-end and the back-end portions of an
+          application. Front-end is what the users will see or interact with on
+          your application. Back-end part is what users do not see, such as
+          application's logic, database, server, etc. A
+          <i>full-stack web developer</i>
+          is comfortable working with both back-end and front-end technologies
+          which make a website or application function properly.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
