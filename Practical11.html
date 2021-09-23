@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Practical11</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      .footer {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: rgb(1, 1, 61);
+      }
+      .section1 {
+        display: flex;
+        padding: 1rem 1rem 1rem 1rem;
+      }
+      .about-article {
+        width: 40%;
+      }
+      .h3-heading {
+        color: white;
+        margin-bottom: 0.5rem;
+      }
+      .links-section {
+        display: flex;
+        justify-content: space-evenly;
+        width: 60%;
+      }
+      .links {
+        display: inline-block;
+        margin-top: 0.2rem;
+        margin-bottom: 0.2rem;
+        text-decoration: none;
+        font-size: 14px;
+        color: rgb(182, 180, 180);
+      }
+      .links:hover {
+        color: white;
+        transform: scale(1.1);
+      }
+      .section2 {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem 1rem 1rem 1rem;
+      }
+      .signup-button {
+        padding: 0.5rem 1rem 0.5rem 1rem;
+        border-radius: 1rem;
+        text-decoration: none;
+        background-color: red;
+        color: white;
+      }
+      .signup-button:hover {
+        background-color: rgb(255, 133, 133);
+      }
+      .section3 {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem 1rem 2rem 1rem;
+        border-top: 1px solid rgb(14, 14, 126);
+      }
+      .section3-icon {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+      }
+      .section3-icon:hover {
+        transition: 0.2s;
+        transform: scale(1.2);
+      }
+      .section4 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        padding: 1rem 0 2rem 0;
+      }
+      .copyright-heading {
+        position: relative;
+        text-decoration: none;
+        font-size: small;
+        font-weight: normal;
+        color: white;
+      }
+      .copyright-heading::after {
+        position: absolute;
+        right: 0;
+        bottom: -0.2rem;
+        display: block;
+        width: 0;
+        height: 1px;
+        content: "";
+        background-color: yellow;
+        transition: all 0.2s;
+      }
+      .copyright-heading:hover::after {
+        width: 100%;
+      }
+
+      @media (max-width: 992px) {
+        .section1 {
+          flex-direction: column;
+        }
+        .about-article {
+          width: 100%;
+        }
+        .links-section {
+          width: 100%;
+          margin-top: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body
+    style="
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    "
+  >
+    <footer class="footer">
+      <section class="section1">
+        <article class="about-article">
+          <h3 class="h3-heading">About</h3>
+          <p style="text-align: justify; color: rgb(182, 180, 180)">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum ut
+            laborum voluptatibus sunt fuga minus possimus veniam voluptates vel
+            alias fugiat vitae, corrupti, soluta reiciendis reprehenderit
+            explicabo rem nostrum? Quidem. Lorem ipsum, dolor sit amet
+            consectetur adipisicing elit. Cum ut laborum voluptatibus sunt fuga
+            minus possimus veniam voluptates vel alias fugiat vitae, corrupti,
+            soluta reiciendis reprehenderit explicabo rem nostrum? Quidem.
+          </p>
+        </article>
+        <section class="links-section">
+          <section class="link1-section">
+            <h3 class="h3-heading">CATEGORIES</h3>
+            <ul style="list-style: none">
+              <li><a class="links" href="#">C</a></li>
+              <li><a class="links" href="#">UI Design</a></li>
+              <li><a class="links" href="#">PHP</a></li>
+              <li><a class="links" href="#">Java</a></li>
+              <li><a class="links" href="#">Android</a></li>
+              <li><a class="links" href="#">Templates</a></li>
+            </ul>
+          </section>
+          <section class="link2-section">
+            <h3 class="h3-heading">QUICK LINKS</h3>
+            <ul style="list-style: none">
+              <li><a class="links" href="#">About Us</a></li>
+              <li><a class="links" href="#">Contact Us</a></li>
+              <li><a class="links" href="#">Contribute</a></li>
+              <li><a class="links" href="#">Java</a></li>
+              <li><a class="links" href="#">Privacy Policy</a></li>
+              <li><a class="links" href="#">Sitemap</a></li>
+            </ul>
+          </section>
+          <section class="link3-section">
+            <h3 class="h3-heading">CONTACT</h3>
+            <ul style="list-style: none">
+              <li>
+                <a class="links" href="#"
+                  >Baghambari Road, Allahpur, Prayagraj</a
+                >
+              </li>
+              <li>
+                <a class="links" href="#">vaibhavpandeyprayag@gmail.com</a>
+              </li>
+              <li><a class="links" href="#">1234567890</a></li>
+              <li><a class="links" href="#">vaibhav-pandey-1ab9021ab</a></li>
+            </ul>
+          </section>
+        </section>
+      </section>
+      <section class="section2">
+        <h1 style="font-weight: normal; color: rgb(182, 180, 180)">
+          Register for Free
+        </h1>
+        <a class="signup-button" href="#">SIGN UP!</a>
+      </section>
+      <section class="section3">
+        <a href="#"
+          ><img
+            class="section3-icon"
+            src="https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png"
+        /></a>
+        <a href="#"
+          ><img
+            class="section3-icon"
+            src="https://img.icons8.com/ios-filled/50/ffffff/twitter-circled.png"
+        /></a>
+        <a href="#"
+          ><img
+            class="section3-icon"
+            src="https://img.icons8.com/ios-filled/50/ffffff/google-plus-circled.png"
+        /></a>
+        <a href="#"
+          ><img
+            class="section3-icon"
+            src="https://img.icons8.com/ios-filled/50/ffffff/linkedin-circled.png"
+        /></a>
+      </section>
+      <section class="section4">
+        <a class="copyright-heading" href="#"
+          >Copyright @ 2020 All Rights Reserved</a
+        >
+      </section>
+    </footer>
+  </body>
+</html>
